@@ -3,15 +3,14 @@
 def loadData():
     data = []
     with open("1input.txt") as f:
-        for line in f.readlines():
-            data.append(line)
+        data = f.readlines()
     return data
 
 def sum2To2020(data):
     for i in range(len(data)-1):
         for n in range(i+1, len(data)):
             if int(data[i]) + int(data[n]) == 2020:
-                print(data[i], data[n])
+                print(int(data[i]), int(data[n]))
                 return (int(data[i]), int(data[n]))
 
 def sum3To2020(data):
@@ -19,7 +18,7 @@ def sum3To2020(data):
         for n in range(i+1, len(data)):
             for m in range(n+1, len(data)):
                 if int(data[i]) + int(data[n]) + int(data[m]) == 2020:
-                    print(data[i], data[n], data[m])
+                    print(int(data[i]), int(data[n]), int(data[m]))
                     return (int(data[i]), int(data[n]), int(data[m]))
 
 def multiply(entries):
@@ -30,7 +29,7 @@ def productOf2():
     data = loadData()
     entries = sum2To2020(data)
     result = multiply(entries)
-    print(result)
+    print(result, "\n\n")
 
 def productOf3():
     data = loadData()
